@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestion des Offres</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Styles */
+        body {
+            /* Dégradé de fond */
+            background: linear-gradient(to right, #00c6ff, #1779f3);
+        }
+        #color-h1{
+            color: #c02b53;
+        }
+
+        .route-list {
+            list-style-type: none; /* Supprime les puces par défaut */
+            padding: 0; /* Supprime le padding par défaut */
+            display: flex; /* Utilise le flexbox pour centrer les éléments */
+            flex-direction: column; /* Aligne les éléments verticalement */
+            align-items: center; /* Centre horizontalement les éléments */
+        }
+
+        .route-list li {
+            background: #fff; /* Fond blanc */
+            border: 1px solid #ddd; /* Bordure grise */
+            border-radius: 5px; /* Coins arrondis */
+            margin: 10px 0; /* Marge entre les éléments */
+            padding: 15px; /* Espacement intérieur */
+            width: 300px; /* Largeur fixe pour les éléments */
+            text-align: center; /* Centre le texte */
+            transition: background-color 0.3s; /* Effet de transition pour le survol */
+            position: relative; /* positionnement absolu des liens */
+        }
+
+        .route-list li:hover {
+            background-color: #e6f7ff; /* Changement de couleur au survol */
+            border-color: #b3e0ff; /* Changement de couleur de bordure au survol */
+        }
+
+        .invisible-link {
+            text-decoration: none; /* Supprime le soulignement */
+            color: transparent; /* Rendre le texte transparent */
+            display: block; /* Permet au lien de remplir l'élément parent */
+            width: 100%; /* Prend toute la largeur du parent */
+            height: 100%; /* Prend toute la hauteur du parent */
+            position: absolute; /* Positionnement absolu pour couvrir l'élément */
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4 text-center" id="color-h1">Espace d'Administration</h1>
+    <h2 class="mb-4 text-center text-white">Gestion des Offres</h2>
+    <ul class="route-list">
+        <th:block th:each="route, iterStat : ${routes}">
+            <li>
+                <a class="invisible-link"
+                   th:href="@{${route.split(' - ')[0]}}"
+                   th:target="${iterStat.index == 0} ? '_blank' : '_self'"></a>
+                <span th:text="${route.split(' - ')[1]}"></span>
+            </li>
+        </th:block>
+    </ul>
+</div>
+</body>
+</html>
