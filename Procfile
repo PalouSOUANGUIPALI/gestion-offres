@@ -1,1 +1,1 @@
-web: java -jar target/gestion-offres-0.0.1-RELEASE.jar
+web: -Dserver.port=$PORT target/gestion-offres-0.0.1-RELEASE.jar
