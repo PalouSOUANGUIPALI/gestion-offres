@@ -40,7 +40,7 @@ public class RoutesController {
         return "redirect:" + olympicTicketsBaseUrl + "/users/login";
     }
 
-    @GetMapping("/ventes-par-types-offres")
+    @GetMapping("/sold-by-type ")
     public String redirectToSoldByType() {
         return "redirect:" + olympicTicketsBaseUrl + "/offers/sold-by-type";
     }
