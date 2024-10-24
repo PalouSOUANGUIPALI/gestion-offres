@@ -18,31 +18,21 @@ public class RoutesController {
 
     @GetMapping
     public String showRoutes(Model model) {
-        // Liste des actions que l'administrateur peut effectuer
+        // Liste des actions que l'administrateur peut effectuer avec les liens directs vers olympic-tickets
         List<String> routes = Arrays.asList(
-                "/home - Accéder au site",
-                "/connexion - Connexion pour gérer les offres",
-                "/ventes-par-types-offres - Voir les offres vendues par types d'offres"
+                olympicTicketsBaseUrl + "/users/home - Accéder au site",
+                olympicTicketsBaseUrl + "/users/login - Connexion pour gérer les offres",
+                olympicTicketsBaseUrl + "/offers/sold-by-type - Voir les offres vendues par types d'offres"
         );
 
         model.addAttribute("routes", routes);
         return "index"; // Retourne le nom du template HTML index (index.html)
     }
 
-    // Redirections vers olympic-tickets
-    @GetMapping("/Accueil")
+    // Ces méthodes permettent une redirection via les routes
+    @GetMapping("/home")
     public String redirectToHome() {
         return "redirect:" + olympicTicketsBaseUrl + "/users/home";
-    }
-
-    @GetMapping("/inscription")
-    public String redirectToInscription() {
-        return "redirect:" + olympicTicketsBaseUrl + "/users/inscription";
-    }
-
-    @GetMapping("/validation")
-    public String redirectToValidation() {
-        return "redirect:" + olympicTicketsBaseUrl + "/users/validation";
     }
 
     @GetMapping("/connexion")
