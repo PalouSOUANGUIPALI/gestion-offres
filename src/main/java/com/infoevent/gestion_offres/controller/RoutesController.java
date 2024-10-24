@@ -12,16 +12,16 @@ import java.util.List;
 public class RoutesController {
 
     // Injecter la base URL de gestion-offres depuis les propriétés
-    @Value("${gestion.offres.base.url}")
-    private String baseUrl;
+    //@Value("${gestion.offres.base.url}")
+    //private String baseUrl;
 
     @GetMapping("/routes")
     public String showRoutes(Model model) {
         // Liste des actions que l'administrateur peut effectuer
         List<String> routes = Arrays.asList(
-                baseUrl + "/users/home - Accéder au site",
-                baseUrl + "/users/connexion - Connexion pour gérer les offres",
-                baseUrl + "/users/sold-by-type - Voir les offres vendues par types d'offres"
+                "/users/home - Accéder au site",
+                "/users/connexion - Connexion pour gérer les offres",
+                "/users/sold-by-type - Voir les offres vendues par types d'offres"
         );
 
         model.addAttribute("routes", routes);
