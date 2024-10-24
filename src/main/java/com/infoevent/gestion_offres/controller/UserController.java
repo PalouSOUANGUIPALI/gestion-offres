@@ -1,4 +1,4 @@
-package com.infoevent.gestion_offres.controller;
+/*package com.infoevent.gestion_offres.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -42,4 +42,6 @@ public class UserController {
     }
 
 }
+
+ */
 
