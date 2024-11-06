@@ -14,7 +14,7 @@ import java.util.List;
 public class RoutesController {
 
     @Value("${olympic.tickets.base.url}")
-    private String olympicTicketsBaseUrl;
+    public String olympicTicketsBaseUrl;
 
     @GetMapping
     public String showRoutes(Model model) {
