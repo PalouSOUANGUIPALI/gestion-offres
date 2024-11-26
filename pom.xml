@@ -34,6 +34,11 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.32</version> <!-- Assurez-vous que cette version est compatible avec votre version de MySQL -->
 		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 		<dependency>
 			<!-- Spring Boot Starter Validation -->
