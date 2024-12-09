@@ -1,4 +1,4 @@
-package com.infoevent.gestion_offres;
+package com.infoevent.gestion_offres.integrationRouterControllerTests;
 
 import com.infoevent.gestion_offres.controller.RoutesController;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,21 +17,21 @@ import static org.mockito.Mockito.*;
 class RoutesControllerTest {
 
     @InjectMocks
-    private RoutesController routesController; // Injecte un mock de RoutesController pour les tests
+    private RoutesController routesController; // Injecte un mock de RoutesController
 
     @Mock
     private Model model; // Mock du modèle pour intercepter les attributs ajoutés
 
     @Value("${olympic.tickets.base.url}")
-    //private String olympicTicketsBaseUrl = "http://example.com"; // Simule une configuration externe fictive
+    //private String olympicTicketsBaseUrl = "http://example.com"; // Simule une configuration externe fictive pour des tests unitaires par exemple
 
-    // Simule la configuration externe de olympic-tickets avec la vraie base URL de l'API olympic-tickets
+    // Configuration externe de olympic-tickets avec la vraie base URL de l'API olympic-tickets pour les tests d'integration
     private String olympicTicketsBaseUrl = "https://olympic-tickets-5bd9958c659c.herokuapp.com";
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this); // Initialise les annotations Mockito
-        routesController = new RoutesController(); // Initialise le contrôleur
+        routesController = new RoutesController(); // Initialise le Routercontrôleur
         routesController.olympicTicketsBaseUrl = olympicTicketsBaseUrl; // Configure l'URL de base de l'API ou celle simulée
     }
 
