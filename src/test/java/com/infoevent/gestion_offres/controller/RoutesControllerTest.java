@@ -36,7 +36,7 @@ class RoutesControllerTest {
     @AfterEach
     void tearDown() throws Exception {
         closeable.close();
-        System.out.println("TEARDOWN :  Test de la méthode terminé avec succès.\n");
+        System.out.println("TEARDOWN :  Le test de la méthode et son néttoyage terminés avec succès.\n");
     }
 
     @Test
@@ -60,7 +60,9 @@ class RoutesControllerTest {
         // Étape 4 : Vérifier le nom de la vue retournée
         assertEquals("index", viewName);
 
-        System.out.println("RÉSULTAT : testShowRoutes est passé avec succès.\n");
+        System.out.println("RÉSULTAT : testShowRoutes est passé avec succès.\n" +
+                "Vici l'ensemble des routes disponibles depuis l'espace de gestion de l'application gestion-offres \n : "
+                + expectedRoutes);
     }
 
     @Test
