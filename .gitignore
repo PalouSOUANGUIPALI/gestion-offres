@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+## Ignore .env dans le suivit Git$
+.env
+
 ### STS ###
 .apt_generated
 .classpath
